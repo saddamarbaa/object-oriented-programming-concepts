@@ -77,3 +77,18 @@ let myLastObj = {
 console.log(myLastObj.myVariable); // Undefined
 console.log(myLastObj[myVariable]); //saddam
 console.log(myLastObj["name"]); // saddam
+
+/*
+  Defining Object
+  [1] Object Literal
+  [2] With New Keyword
+*/
+
+let teacher = new Object();
+teacher.firstName = "Adam";
+teacher.age = 12;
+teacher.lastName = "Ali";
+console.log(teacher);
+console.log(teacher.age);
+console.log(teacher.firstName);
+console.log(teacher.lastName);
