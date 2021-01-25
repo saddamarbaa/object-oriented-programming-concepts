@@ -120,3 +120,26 @@ console.log(myObject.prop2);
 console.log(myObject.prop6);
 console.log(myObject.method1());
 console.log(myObject.method2());
+
+/*
+  Constructor Function
+*/
+
+function Phone(serial, color, price, type) {
+  this.serial = serial;
+  this.color = color;
+  this.price = price - 20;
+  this.type = type;
+}
+
+let phone1 = new Phone(12, "blue", 212, "ipone");
+console.log(phone1.serial);
+console.log(phone1.color);
+console.log(phone1.price);
+console.log(phone1.type);
+
+let phone2 = new Phone(112, "red", 324, "Sumsung");
+console.log(phone2.serial);
+console.log(phone2.color);
+console.log(phone2.price);
+console.log(phone2.type);
