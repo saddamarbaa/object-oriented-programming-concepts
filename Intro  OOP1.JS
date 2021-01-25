@@ -44,6 +44,14 @@ console.log(typeof user.getFullName); // function
 console.log(user.getFullName());
 console.log(user.getAge());
 
+// For In Loop With Object Properties
+
+for (const key in user) {
+  if (Object.hasOwnProperty.call(user, key)) {
+    console.log(user[key]);
+  }
+}
+
 // Dot Notation vs Bracket Notation
 
 let myObj = {
