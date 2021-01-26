@@ -179,8 +179,18 @@ class Student {
     this.age = age;
     Student.counter++;
   }
+
   studentInfo() {
     return `Name: ${this.name} \nAge: ${this.age}\nID :${this.id}`;
+  }
+  // accessor property(getter)
+  get getName() {
+    return this.name;
+  }
+
+  //accessor property(setter)
+  set changeName(newName) {
+    this.name = newName;
   }
 
   // Static Methods
@@ -204,14 +214,20 @@ class HightSchoolStudent extends Student {
     super(name, id, age);
     this.gba = gba;
   }
-  getGBA() {
-    return `Your GBA IS ${this.gba}`;
+  get getGBA() {
+    `Your GBA IS ${this.gba}`;
   }
 }
 
 let hightst1 = new HightSchoolStudent("Sony", 21, 27, 88);
 console.log(hightst1.studentInfo());
 console.log(hightst1);
-console.log(hightst1.getGBA());
+console.log(hightst1.getGBA);
 console.log(hightst1);
 console.log(hightst1.age);
+
+// JavaScript Getter and Setter
+console.log(student1.getName);
+// change(set) object property using a setter
+student1.changeName = "testing Name";
+console.log(student1.name);
