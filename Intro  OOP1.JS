@@ -242,15 +242,15 @@ console.log(student1.name);
 */
 
 const myTestObject = {
-  a: 1,
-  b: 2,
+  a: 11,
+  b: 12,
 };
 
 Object.defineProperty(myTestObject, "c", {
   writable: false,
   enumerable: false,
   configurable: true,
-  value: 3,
+  value: 13,
 });
 
 Object.defineProperty(myTestObject, "c", {
