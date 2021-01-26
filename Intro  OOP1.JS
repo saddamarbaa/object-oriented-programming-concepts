@@ -127,9 +127,12 @@ console.log(myObject.method2());
 
 function Phone(serial, color, price, type) {
   this.serial = serial;
-  this.color = color;
+  this.color = `${color} *`;
   this.price = price - 20;
   this.type = type;
+  // console.log(this);
+  this.Info = () =>
+    `Color :${this.color}\nprice :${this.price}\nSerial :${this.serial}\nType :${this.type}`;
 }
 
 let phone1 = new Phone(12, "blue", 212, "ipone");
@@ -137,9 +140,57 @@ console.log(phone1.serial);
 console.log(phone1.color);
 console.log(phone1.price);
 console.log(phone1.type);
+console.log(phone1.Info());
 
 let phone2 = new Phone(112, "red", 324, "Sumsung");
 console.log(phone2.serial);
 console.log(phone2.color);
 console.log(phone2.price);
 console.log(phone2.type);
+
+console.log(phone1 instanceof Phone);
+console.log(phone2 instanceof Phone);
+console.log(phone1);
+console.log(phone2.Info());
+
+// const test = [1, 2, 3];
+
+// // console.log(Phone.prototype);
+// console.log(test.prototype);
+
+// Phone.prototype.addTitle = function () {
+//   return `${this.serial}`;
+// };
+
+// console.log(Phone.prototype);
+// console.log(phone1.addTitle);
+
+/*
+  Class
+*/
+
+// Student Class
+class Student {
+  // Static Properties
+  static counter = 0;
+  constructor(name, id, age) {
+    this.name = name;
+    this.id = id;
+    this.age = age;
+    Student.counter++;
+  }
+  studentInfo = () => `Name: ${this.name} \nAge: ${this.age}\nID :${this.id}`;
+
+  // Static Methods
+  static studentCount = () => `${this.counter} Student in scholl`;
+}
+
+let student1 = new Student("John", 1, 23);
+let student2 = new Student("Ali", 11, 24);
+let student3 = new Student("John", 12, 25);
+
+console.log(student1.studentInfo());
+console.log(student2.studentInfo());
+console.log(student3.studentInfo());
+console.log(typeof user);
+console.log(Student.studentCount());
