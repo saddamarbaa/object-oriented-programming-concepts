@@ -231,3 +231,43 @@ console.log(student1.getName);
 // change(set) object property using a setter
 student1.changeName = "testing Name";
 console.log(student1.name);
+
+/*
+  Object Meta Data
+  writable
+  enumerable
+  configurable
+  ============
+  Object.defineProperty(obj, prop, descriptor)
+*/
+
+const myTestObject = {
+  a: 1,
+  b: 2,
+};
+
+Object.defineProperty(myTestObject, "c", {
+  writable: false,
+  enumerable: false,
+  configurable: true,
+  value: 3,
+});
+
+Object.defineProperty(myTestObject, "c", {
+  writable: true,
+});
+
+// console.log(delete  myTestObject.c); // Will Not Delete Because configurable is False
+myTestObject.c = 500; // Will Not Change Because writable is False
+
+console.log(myTestObject);
+
+console.log("#".repeat(10));
+
+for (let prop in myTestObject) {
+  console.log(prop, myTestObject[prop]);
+}
+
+console.log("#".repeat(10));
+
+console.log(Object.getOwnPropertyNames(myObject));
