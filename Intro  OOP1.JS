@@ -179,10 +179,14 @@ class Student {
     this.age = age;
     Student.counter++;
   }
-  studentInfo = () => `Name: ${this.name} \nAge: ${this.age}\nID :${this.id}`;
+  studentInfo() {
+    return `Name: ${this.name} \nAge: ${this.age}\nID :${this.id}`;
+  }
 
   // Static Methods
-  static studentCount = () => `${this.counter} Student in scholl`;
+  static studentCount() {
+    return `${this.counter} Student in scholl`;
+  }
 }
 
 let student1 = new Student("John", 1, 23);
@@ -194,3 +198,20 @@ console.log(student2.studentInfo());
 console.log(student3.studentInfo());
 console.log(typeof user);
 console.log(Student.studentCount());
+
+class HightSchoolStudent extends Student {
+  constructor(name, id, age, gba) {
+    super(name, id, age);
+    this.gba = gba;
+  }
+  getGBA() {
+    return `Your GBA IS ${this.gba}`;
+  }
+}
+
+let hightst1 = new HightSchoolStudent("Sony", 21, 27, 88);
+console.log(hightst1.studentInfo());
+console.log(hightst1);
+console.log(hightst1.getGBA());
+console.log(hightst1);
+console.log(hightst1.age);
